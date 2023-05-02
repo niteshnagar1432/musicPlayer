@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> || Nitesh Nagar</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="logIn-body">
+        <div class="inner-box">
+            <span class="text">Sign In</span>
+            <label for="userName">userName:</label>
+            <div class="log-input">
+                <input class="u_Name" type="text">
+            </div>
+            <label class="pass" for="userPass">user Password:</label>
+            <div class="log-pass">
+                <input class="u_Pass" type="password">
+            </div>
+            <div class="log-remeber">
+                <div class="box">
+                    <input name="remeber" id="remeber" type="checkbox">
+                    <label for="remeber">remeber me</label>
+                </div>
+                <span>Forget Password</span>
+            </div>
+            <div class="log-btn">
+                <button class="login-btn" type="submit">Log-In</button>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    let logBtn = document.querySelector('.login-btn');
+    let term = document.querySelector('#remeber');
+    let name = document.querySelector('.u_Name');
+    let pass = document.querySelector('.u_Pass');
+
+
+    if (localStorage.getItem('user')) {
+        window.location.assign('./dashBord.html');
+    }
+
+
+    logBtn.addEventListener('click', function () {
+        let userName = name.value;
+        let userPass = pass.value;
+
+        if (term.checked) {
+            getData(userName, userPass)
+                .then(data => {
+                    if (data.code == 200) {
+                        localStorage.setItem('user', data.data[0].u_name);
+                        localStorage.setItem('user_date', data.data[0].updated_at);
+                        localStorage.setItem('user_pass', data.data[0].u_password);
+                        window.location.assign('./dashBord.html');
+                    } else {
+                        alert('wrong Crediantial...');
+                    }
+                });
+        } else {
+            alert('Please Select CheckBox....!');
+        }
+    });
+
+    function getData(userName, userPass) {
+        return fetch('http://localhost/Plyer_Music/API/admin_api.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                userName: userName,
+                userPass: userPass
+            })
+        })
+            .then(response => response.json())
+            .catch(error => console.error(error));
+    }
+
+</script>
+
+
+</html>

@@ -1,0 +1,961 @@
+:root{
+    --primary-color:black;
+    --primary-white-color:white;
+    --secondary-color:rgb(67, 67, 135);
+    --primary-secondary-color:palevioletred;
+    --primary-font:'Courier New', Courier, monospace;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing:border-box;
+    user-select: none;
+    user-zoom: none;
+}
+html,body{
+    width: 100%;
+    height: 100%;
+}
+.main{
+    width: 100%;
+    height: 100%;
+    background-color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.main .side-bar{
+    width: 20.3%;
+    height: 100vh;
+    background-color: var(--secondary-color);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 20px;
+    overflow-y: auto;
+    justify-content: space-between;
+}
+.main .side-bar .profile-box{
+    width: 90%;
+    height: 30%;
+    background-color: red;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.main .side-bar .profile-box>img{
+    width: 100%;
+    height: 100%;
+    object-fit: top;
+    object-fit: cover;
+    object-position: top;
+}
+.main .side-bar .menu-items{
+    width: 90%;
+    height: 69%;
+    background-color: var(--primary-color);
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    padding-top: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    overflow-y: auto;
+}
+.main .side-bar .menu-items::-webkit-scrollbar{
+    display: none;
+}
+.main .side-bar .menu-items .item{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    width: 100%;
+    padding-left: 30px;
+    padding-right: 10px;
+    cursor: pointer;
+}
+.main .side-bar .menu-items .item:hover>i{
+    background-color: palevioletred;
+}
+.main .side-bar .menu-items .item:hover>.txt{
+    color: palevioletred;
+}
+.main .side-bar .menu-items .item i{
+    font-size: 22px;
+    padding: 10px;
+    background-color: white;
+    border-radius: 10px;
+    color: var(--secondary-color);
+}
+.main .side-bar .menu-items .item .txt{
+    color: var(--primary-white-color);
+    font-size: 20px;
+    font-weight: 800;
+    font-family: 'voyage';
+    letter-spacing: 2px;
+}
+.main .main-container{
+    width: 79.3%;
+    height: 100vh;
+    background-color: var(--secondary-color);
+    padding-top: 1.2%;
+    overflow-y: auto;
+}
+.main .main-container::-webkit-scrollbar{
+    display: none;
+}
+.main .main-container .app-bar{
+    width: 100%;
+    height: 8%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 2%;
+    padding-right: 2%;
+}
+.main .main-container .app-bar .input0-box{
+    width: 30%;
+    height: 80%;
+}
+.main .main-container .app-bar .input0-box>input{
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    border-radius: 30px;
+    font-family: 'voyage';
+    font-size: 18px;
+}
+.main .main-container .app-bar .icon0-box{
+    display: flex;
+    gap: 20px;
+}
+.main .main-container .app-bar .icon0-box>i{
+    color: var(--primary-white-color);
+    font-size: 23px;
+}
+.main .main-container .img-slider-bar{
+    margin-top: 20px;
+    width: 100%;
+    height: 180px;
+    padding-left: 2%;
+    padding-right: 2%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.main .main-container .img-slider-bar .box0{
+    width: 30%;
+    height: 100%;
+    background-color: black;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.main .main-container .img-slider-bar .box0>img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+}
+.main .main-container .slider-indicater{
+    width: 100%;
+    height: 10px;
+    /* background-color: red; */
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+.main .main-container .slider-indicater>.indigater0{
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: red;
+}
+
+.main .main-container .weekend-list{
+    width: 100%;
+    height: 20px;
+    margin-top: 15px;
+    padding-left: 2.2%;
+    color: var(--primary-white-color);
+    font-size: 22px;
+    font-weight: 600;
+    font-family: 'voyage';
+    letter-spacing: 1px;
+}
+.main .main-container .weekend-music-list{
+    width: 100%;
+    height: 220px;
+    margin-top: 15px;
+    /* background-color: red; */
+    padding-left: 2%;
+    padding-right: 2%;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    overflow: auto;
+}
+.main .main-container .weekend-music-list::-webkit-scrollbar{
+    display: none;
+}
+.main .main-container .weekend-music-list .week0-box{
+    width: 170px !important;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.main .main-container .weekend-music-list .week0-box>img{
+    /* width: 100%; */
+    height: 70%;
+    object-fit: cover;
+    object-position: top;
+    border-radius: 10px;
+}
+.main .main-container .weekend-music-list .week0-box>h3{
+    color: var(--primary-white-color);
+}
+.main .main-container .weekend-music-list .week0-box>h5{
+    color: var(--primary-white-color);
+}
+
+.main .main-container .bottom-box{
+    width: 100%;
+    height: 350px;
+    /* background-color: red; */
+    padding-left: 2%;
+    padding-right: 2%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.main .main-container .bottom-box .left-box{
+    width: 49%;
+    height: 100%;
+    /* background-color: blue; */
+    padding-left: 10px;
+    padding-right: 10px;
+    overflow-y: auto;
+}
+.main .main-container .bottom-box .left-box::-webkit-scrollbar{
+    display: none;
+}
+.main .main-container .bottom-box .left-box .release-box{
+    width: 100%;
+    height: auto;
+    /* background-color: black; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 10px;
+}
+.main .main-container .bottom-box .left-box .release-box .heading{
+    color: var(--primary-white-color);
+    font-size: 18px;
+    font-weight: 800;
+    font-family: 'voyage';
+    letter-spacing: 1px;
+}
+.main .main-container .bottom-box .left-box .release-box .normal{
+    color: var(--primary-white-color);
+    font-size: 13px;
+    font-weight: 800;
+    font-family: 'voyage';
+    letter-spacing: 1px;
+}
+.main .main-container .bottom-box .left-box .item{
+    width: 100%;
+    height: 60px;
+    /* background-color: black; */
+    margin-top: 10px;
+    border-bottom: 2px solid var(--primary-white-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.main .main-container .bottom-box .left-box .item>img{
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+}
+.main .main-container .bottom-box .left-box .item .song-details{
+    display: flex;
+    flex-direction: column;
+    color: var(--primary-white-color);
+    font-family: 'voyage';
+    letter-spacing: 1.5px;
+}
+.main .main-container .bottom-box .left-box .item>i{
+    color: var(--primary-white-color);
+    padding: 5px;
+    background-color:var(--primary-secondary-color);
+    border-radius: 50%;
+}
+.main .main-container .bottom-box .left-box .item>.time{
+    color: var(--primary-white-color);
+    font-family: 'voyage';
+}
+.main .main-container .bottom-box .right-box{
+    width: 49%;
+    height: 100%;
+    /* background-color: aqua; */
+    padding-left: 2%;
+    padding-right: 2%;
+}
+.main .main-container .bottom-box .right-box .release-box{
+    width: 100%;
+    height: auto;
+    /* background-color: black; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 10px;
+}
+.main .main-container .bottom-box .right-box .release-box .heading{
+    color: var(--primary-white-color);
+    font-size: 18px;
+    font-weight: 800;
+    font-family: 'voyage';
+    letter-spacing: 1px;
+}
+.main .main-container .bottom-box .right-box .release-box .normal{
+    color: var(--primary-white-color);
+    font-size: 13px;
+    font-weight: 800;
+    font-family: 'voyage';
+    letter-spacing: 1px;
+}
+.main .main-container .bottom-box .right-box .artist-list{
+    width: 100%;
+    height: 80px;
+    /* background-color: black; */
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    overflow-x: auto;
+}
+.main .main-container .bottom-box .right-box .artist-list::-webkit-scrollbar{
+    display: none;
+    scroll-behavior: smooth;
+}
+.main .main-container .bottom-box .right-box .artist-list>img{
+    width: 80px;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+    border-radius: 10px;
+}
+.main .main-container .bottom-box .right-box .music-player{
+    width: 100%;
+    height: 60%;
+    margin-top: 15px;
+    background-color: rgb(87, 87, 209);
+    border-radius: 10px;
+    overflow: hidden;
+}
+.main .main-container .bottom-box .right-box .music-player .music-img{
+    width: 100%;
+    height: 120px;
+    /* background-color: red; */
+    margin-top: 20px;
+    padding-left: 8%;
+    padding-right: 2%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    position: relative;
+}
+.main .main-container .bottom-box .right-box .music-player .music-img>img{
+    width: 140px;
+    height: 100px;
+    object-fit: cover;
+    object-position: top;
+    border-radius: 10px;
+}
+.main .main-container .bottom-box .right-box .music-player .music-img .song-details{
+    display: flex;
+    flex-direction: column;
+    font-family: 'voyage';
+    color: var(--primary-white-color);
+}
+.main .main-container .bottom-box .right-box .music-player .music-img .song-details .name{
+    font-size: 22px;
+    letter-spacing: 1.5px;
+}
+.main .main-container .bottom-box .right-box .music-player .music-img .song-details .artist{
+    font-size: 16px;
+    letter-spacing: 1.5px;
+}
+.main .main-container .bottom-box .right-box .music-player .music-img .song-details .controller{
+    width: 120px;
+    height: 50px;
+    margin-top: 10px;
+    /* background-color: red; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    color: var(--primary-white-color);
+}
+.main .main-container .bottom-box .right-box .music-player .music-img .song-details .controller>i{
+    font-size: 22px;
+    cursor: pointer;
+}
+.main .main-container .bottom-box .right-box .music-player .music-img .song-details .controller>.play{
+    font-size: 27px;
+    padding: 5px;
+    background-color: var(--primary-secondary-color);
+    border-radius: 50%;
+}
+.main .main-container .bottom-box .right-box .music-player .music-status{
+    width: 80%;
+    height: 30px;
+    position: absolute;
+    bottom: -40px;
+    left: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    color: var(--primary-white-color);
+}
+.main .main-container .bottom-box .right-box .music-player .music-status>i{
+    font-size: 18px;
+}
+.main .main-container .bottom-box .right-box .music-player .music-status>.status{
+    width: 70%;
+    height: 2px;
+    background-color: var(--primary-white-color);
+    border-radius: 3px;
+}
+
+
+
+
+.active{
+    color: palevioletred;
+}
+
+
+.interNate{
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--primary-secondary-color);
+    position: relative;
+    display: none;
+    /* overflow: hidden; */
+}
+.interNate>img{
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.interNate>h1{
+    font-family: 'voyage';
+    color: var(--primary-white-color);
+    letter-spacing: 2px;
+    font-size: 22px;
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.setting-box{
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    width: 190px;
+    height: 190px;
+    background-color: black;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    /* display: none; */
+}
+.setting-box span{
+    color: var(--primary-white-color);
+    cursor: pointer;
+    font-family: 'voyage';
+    letter-spacing: 1.5px;
+    font-size: 18px;
+}
+.setting-box span:hover{
+    color: var(--primary-secondary-color);
+    font-size: 20px;
+}
+.setting-box .blank{
+    width: 80%;
+    height: 2px;
+    background-color: var(--primary-secondary-color);
+}
+.s-icon:hover{
+    color: var(--primary-secondary-color) !important;
+    font-size: 27px !important;
+    cursor: pointer;
+}
+/* ----------------------------------- Log - In ----------------------------------------------------- */
+
+.logIn-body{
+    width: 100vw;
+    height: 100vh;
+    background-color: #E5E5E5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.logIn-body .inner-box{
+    width: 40%;
+    height: 70%;
+    background-color: rgba(161, 54, 54, 0.226);
+    display: flex;
+    align-items: start;
+    justify-content: start;
+    padding-left: 10%;
+    flex-direction: column;
+    padding-top: 30px;
+    padding-bottom: 20px;
+    border-radius: 10px;
+    
+}
+.logIn-body .inner-box .text{
+    color: #224957;
+    font-size: 44px;
+    font-weight: 400;
+    padding-left: 17%;
+}
+
+.logIn-body .inner-box label{
+    margin-top: 10%;
+    margin-bottom:1% ;
+}
+.logIn-body .inner-box .pass{
+    margin-top: 7% !important;
+
+}
+.logIn-body .inner-box .log-input{
+    width: 70%;
+    height: 10%;
+    background-color: #224957;
+    border-radius: 5px;
+    overflow: hidden;
+}
+.logIn-body .inner-box .log-input>input{
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    color: white;
+    font-size: 16px;
+}
+.logIn-body .inner-box .log-pass{
+    width: 70%;
+    height: 10%;
+    background-color: #224957;
+    border-radius: 5px;
+    overflow: hidden;
+}
+.logIn-body .inner-box .log-pass>input{
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    color: white;
+    font-size: 16px;
+}
+.logIn-body .inner-box .log-remeber{
+    width: 70%;
+    height: 10%;
+    /* background-color: #2f9cc4; */
+    border-radius: 5px;
+    margin-top: 2%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.logIn-body .inner-box .log-remeber span{
+    color: rgb(53, 52, 52);
+    font-size: 14px;
+    font-weight: 600;
+}
+.logIn-body .inner-box .log-remeber .box>input{
+    font-size: 25px;
+    font-weight: 900;
+}
+.logIn-body .inner-box .log-remeber .box>label{
+    color: #224957;
+}
+.logIn-body .inner-box .log-btn{
+    width: 70%;
+    height: 10%;
+    background-color: #20DF7F;
+    border-radius: 10px;
+    margin-top: 2%;
+    overflow: hidden;
+    box-shadow: 1px 3px rgba(40, 40, 40, 0.532);
+}
+.logIn-body .inner-box .log-btn>button{
+    width: 100%;
+    height: 100%;
+    color: white;
+    font-size: 22px;
+    font-weight: 600;
+    background-color: transparent;
+    border: none;
+    font-family: 'voyage';
+    outline: none;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+/* ----------------------------------- Log - In ----------------------------------------------------- */
+/* ----------------------------------- Dash Bord ----------------------------------------------------- */
+
+.main .main-container .banner{
+    width: 90%;
+    height: 50%;
+    background-color: #20DF7F;
+    margin-left: 5%;
+    margin-top: 5%;
+    border-radius: 5px;
+    overflow: hidden;
+}
+.main .main-container .banner>img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: bottom;
+}
+.main .main-container .profile-box{
+    width: 60%;
+    height: 440px;
+    background-color: #20df8042;
+    margin-top: 5%;
+    margin-left: 20%;
+    border-radius: 10px;
+    margin-bottom: 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.main .main-container .profile-box>i{
+    font-size: 75px;
+    padding: 20px;
+    border-radius: 50%;
+    background-color: #224957;
+    color: var(--primary-white-color);
+}
+.main .main-container .profile-box>.email-box,.pass-box{
+    width: 40%;
+    height: 11%;
+    background-color: #224957;
+    margin-top: 20px;
+    border-radius: 5px;
+    color: var(--primary-white-color);
+    font-size: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+.main .main-container .profile-box>.date{
+    width: 40%;
+    height: 11%;
+    /* background-color: #224957; */
+    margin-top: 20px;
+    border-radius: 5px;
+}
+.main .main-container .profile-box .pass-box>button{
+    width: 100%;
+    height: 100%;
+    color: red;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    font-size: 22px;
+    font-family: 'voyage';
+    letter-spacing: 1.5px;
+    cursor: pointer;
+}
+
+/* ----------------------------------- Dash Bord ----------------------------------------------------- */
+/* ----------------------------------- Footer ----------------------------------------------------- */
+
+.main .main-container .footer{
+    width: 100%;
+    height: 300px;
+    background-color: #ffbbbf72;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top: 3px solid #20DF7F;
+}
+
+.main .main-container .footer .f-box{
+    width: 50%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.main .main-container .footer .f-box .logo>.name{
+    font-size: 42px;
+    font-family: 'voyage';
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: var(--primary-color);
+}
+.main .main-container .footer .f-box .details{
+    text-align: center;
+    color: var(--primary-color);
+    font-size: 18px;
+    margin-top: 5%;
+}
+.main .main-container .footer .f-box .links{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+.main .main-container .footer .f-box .links i{
+    color: var(--primary-white-color);
+    margin-top: 30px;
+    padding: 10px;
+    font-size: 22px;
+    background-color: #224957;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.main .main-container .footer .f-box .links i:hover{
+    font-size: 24px;
+    color: var(--primary-secondary-color);
+}
+/* ----------------------------------- Footer----------------------------------------------------- */
+/* ----------------------------------- File Manager----------------------------------------------------- */
+.main .main-container .file-banner{
+    width: 90%;
+    height: 300px;
+    background-color: #20DF7F;
+    margin-left: 5%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 1px 3px 10px gold;
+}
+.main .main-container .file-banner>img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+.main .main-container .options{
+    width: 90%;
+    height: auto;
+    margin-bottom: 5%;
+    margin-top: 5%;
+    margin-left: 5%;
+    background-color: #43735ba0;
+    border-radius: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 3%;
+}
+.main .main-container .options .item{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    width: auto;
+    height: auto;
+    gap: 10px;
+    cursor: pointer;
+}
+.main .main-container .options .item i{
+    font-size: 32px;
+    padding: 15px;
+    background-color: #224957;
+    border-radius: 50%;
+    color: var(--primary-white-color);
+}
+.main .main-container .options .item i:hover,
+.main .main-container .options .item .name:hover{
+    color: var(--primary-secondary-color);
+}
+.main .main-container .options .item .name{
+    font-size: 16px;
+    color: var(--primary-white-color);
+}
+/* ----------------------------------- File Manager----------------------------------------------------- */
+/* ----------------------------------- Devloper----------------------------------------------------- */
+.main .main-container .container{
+    width: 90%;
+    height: auto;
+    background: linear-gradient(to top, #20df8031 , rgba(255, 255, 255, 0.409));
+    margin-top: 5%;
+    margin-left: 5%;
+    margin-bottom: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 20px;
+}
+.main .main-container .container>i{
+    font-size: 45px;
+    padding: 15px;
+    background-color: #224957;
+    color: var(--primary-white-color);
+    border-radius: 50%;
+}
+.main .main-container .container>.box{
+    font-size: 34px;
+    font-family: 'voyage';
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    color: #224957;
+    text-shadow: 1px 1px 1px #224957;
+    margin-top: 20px;
+}
+.main .main-container .container>.my-box{
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    padding-top: 30px;
+    padding-left: 10px;
+    padding-bottom: 30px;
+}
+.main .main-container .container>.my-box h3{
+    font-family: 'voyage';
+    font-size: 34px;
+    color: #224957;
+    letter-spacing: 1.2px;
+    margin-bottom: 20px;
+}
+.main .main-container .container .my-box .txt{
+    width: 80%;
+    font-size: 22px;
+    color: var(--primary-white-color);
+    padding-left: 20px;
+}
+/* ----------------------------------- Devloper----------------------------------------------------- */
+/* ----------------------------------- help----------------------------------------------------- */
+.main .main-container .container .support{
+    width: 100%;
+    height: auto;
+    background-color: #20df8047;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding-bottom: 30px;
+    padding-top: 30px;
+}
+.main .main-container .container .support .log{
+    font-size: 42px;
+    font-family: 'voyage';
+    color: var(--primary-color);
+    margin-bottom: 30px;
+    font-weight: 800;
+}
+.main .main-container .container .support textarea{
+    border-radius: 5px;
+    margin-bottom: 10px;
+    background-color: #224957;
+    color: var(--primary-white-color);
+}
+.main .main-container .container .support .name-box,.email-box,.topic-box,.btn-box{
+    width: 50%;
+    height: 40px;
+    border-radius: 5px;
+    /* background-color: blue; */
+    margin-bottom: 10px;
+    overflow: hidden;
+}
+.main .main-container .container .support .name-box{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.main .main-container .container .support .name-box .fist{
+    width: 49%;
+    height: 100%;
+    background-color: #224957;
+    border-radius: 5px;
+    overflow: hidden;
+}
+.main .main-container .container .support .name-box .fist>input{
+    width: 100%;
+    height: 100%;
+    background-color: #224957;
+    font-size: 18px;
+    color: var(--primary-white-color);
+    border: none;
+    outline: none;
+    padding-left: 10px;
+}
+.main .main-container .container .support .name-box .last{
+    width: 49%;
+    height: 100%;
+    /* background-color: red; */
+    border-radius: 5px;
+    overflow: hidden;
+}
+.main .main-container .container .support .name-box .last>input{
+    width: 100%;
+    height: 100%;
+    background-color: #224957;
+    font-size: 18px;
+    color: var(--primary-white-color);
+    border: none;
+    padding-left: 10px;
+    outline: none;
+}
+.main .main-container .container .support .email-box>input{
+    width: 100%;
+    height: 100%;
+    background-color: #224957;
+    font-size: 18px;
+    color: var(--primary-white-color);
+    border: none;
+    outline: none;
+    padding-left: 10px;
+}
+.main .main-container .container .support .topic-box>input{
+    width: 100%;
+    height: 100%;
+    background-color: #224957;
+    font-size: 18px;
+    color: var(--primary-white-color);
+    border: none;
+    outline: none;
+    padding-left: 10px;
+}
+.main .main-container .container .support .btn-box>button{
+    width: 100%;
+    height: 100%;
+    background-color: #224957;
+    font-size: 22px;
+    color: var(--primary-white-color);
+    border: none;
+    font-weight: 700;
+    font-family: 'voyage';
+    outline: none;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+/* ----------------------------------- help----------------------------------------------------- */
+

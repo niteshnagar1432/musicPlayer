@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player || Nitesh Nagar</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="interNate">
+        <img src="./project-img/3d-buddy-white-no-wifi-icon.png" alt="No Inter-Net">
+        <h1>No Internet</h1>
+    </div>
+    <div class="setting-box" style="display: none;">
+        <span class="e-profile">Edit Profoile</span>
+        <div class="blank"></div>
+        <span class="setting">Setting</span>
+        <div class="blank"></div>
+        <span class="setting out" style="color: red;">Log-Out</span>
+        <div class="blank"></div>
+    </div>
+    <div class="main">
+        <div class="side-bar">
+            <div class="profile-box">
+                <img src="./project-img/nitesh-profile.jpg" alt="">
+            </div>
+            <div class="menu-items">
+                <div class="item explore-btn">
+                    <i class="ri-safari-fill"></i>
+                    <div class="txt">Explore</div>
+                </div>
+                <div class="item file-btn">
+                    <i class="ri-folder-user-line"></i>
+                    <div class="txt">File Maneger</div>
+                </div>
+                <div class="item myMusic-btn">
+                    <i class="ri-folder-music-line"></i>
+                    <div class="txt">My Music</div>
+                </div>
+                <div class="item video-btn">
+                    <i class="ri-live-line"></i>
+                    <div class="txt">Video</div>
+                </div>
+                <div class="item podacast-btn">
+                    <i class="ri-wireless-charging-line"></i>
+                    <div class="txt">Podcast</div>
+                </div>
+                <div class="item artist-btn">
+                    <i class="ri-mic-2-line"></i>
+                    <div class="txt">Artist</div>
+                </div>
+                <div class="item album-btn">
+                    <i class="ri-disc-line"></i>
+                    <div class="txt">Album</div>
+                </div>
+                <div class="item developer-btn">
+                    <i class="ri-hand-coin-line"></i>
+                    <div class="txt">Devloper</div>
+                </div>
+                <div class="item bug-btn">
+                    <i class="ri-bug-line"></i>
+                    <div class="txt">Report Bug</div>
+                </div>
+                <div class="item help-btn">
+                    <i class="ri-24-hours-fill"></i>
+                    <div class="txt">Help 24X7</div>
+                </div>
+            </div>
+        </div>
+        <div class="main-container">
+            <div class="app-bar">
+                <div class="input0-box">
+                    <input type="text" placeholder="        Serch here....">
+                </div>
+                <div class="icon0-box">
+                    <i class="ri-notification-2-fill"></i>
+                    <i class="ri-settings-3-fill s-icon"></i>
+                </div>
+            </div>
+            <div class="banner">
+                <img src="./project-img/party-banner.webp" alt="">
+            </div>
+            <div class="profile-box">
+                <i class="ri-shield-user-line"></i>
+                <div class="email-box">
+                    <span class="email">admin@gmail.com</span>
+                </div>
+                <div class="pass-box">
+                    <span class="pass">ok</span>
+                </div>
+                <div class="pass-box">
+                    <button class="out" onclick="logOut();">Log-Out</button>
+                </div>
+                <div class="date">
+                    <span class="date">12-02-2002</span>
+                </div>
+            </div>
+            <div class="footer">
+                <div class="f-box">
+                    <div class="logo">
+                        <span class="name">Music-Player || nitesh</span>
+                    </div>
+                    <span class="details">
+                        A skilled music player developer should have expertise in programming languages and audio
+                        technologies, as well as a strong understanding of user experience and interface design. They
+                        should be able to create a seamless, reliable, and user-friendly music player application that
+                        meets the needs and expectations of music lovers.
+                    </span>
+                    <div class="links">
+                        <i class="ri-instagram-line"></i>
+                        <i class="ri-linkedin-fill"></i>
+                        <i class="ri-twitter-line"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"
+    integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+<script src="./js/feature.js"></script>
+<script src="./js/route.js"></script>
+<script>
+
+    let email = document.querySelector('.email');
+    let pass = document.querySelector('.pass');
+    let date = document.querySelector('.date');
+    var sEmail = localStorage.getItem('user');
+    var sPass = localStorage.getItem('user_pass');
+    var sDate = localStorage.getItem('user_date');
+    var outBtn = document.querySelector('.out');
+
+    userValidOrNot();
+    basicFeature();
+    InterNet();
+    Route();
+
+    email.innerHTML = sEmail;
+    pass.innerHTML = sPass;
+    date.innerHTML = "Last Updated :- " + sDate;
+
+
+    outBtn.addEventListener('click', function () {
+        var response = logOut();
+        alert(response);
+        window.location.assign('./login.html');
+    });
+
+    function userValidOrNot() {
+        if (!sPass) {
+            window.location.assign('./login.html');
+        }
+    }
+
+    function logOut() {
+        localStorage.removeItem('user');
+        localStorage.removeItem('user_date');
+        localStorage.removeItem('user_pass');
+        window.location.assign('./index.html');
+        return 'logout sucess...';
+    }
+
+</script>
+
+</html>

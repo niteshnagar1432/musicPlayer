@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player || Nitesh Nagar</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="interNate">
+        <img src="./project-img/3d-buddy-white-no-wifi-icon.png" alt="No Inter-Net">
+        <h1>No Internet</h1>
+    </div>
+    <div class="setting-box" style="display: none;">
+        <span class="logIn">Log-In</span>
+        <div class="blank"></div>
+        <span class="e-profile">Edit Profoile</span>
+        <div class="blank"></div>
+        <span class="setting">Setting</span>
+        <div class="blank"></div>
+    </div>
+    <div class="main">
+        <div class="side-bar">
+            <div class="profile-box">
+                <img src="./project-img/nitesh-profile.jpg" alt="">
+            </div>
+            <div class="menu-items">
+                <div class="item explore-btn">
+                    <i class="ri-safari-fill"></i>
+                    <div class="txt">Explore</div>
+                </div>
+                <div class="item myMusic-btn">
+                    <i class="ri-folder-music-line"></i>
+                    <div class="txt">My Music</div>
+                </div>
+                <div class="item video-btn">
+                    <i class="ri-live-line"></i>
+                    <div class="txt">Video</div>
+                </div>
+                <div class="item podacast-btn">
+                    <i class="ri-wireless-charging-line"></i>
+                    <div class="txt">Podcast</div>
+                </div>
+                <div class="item artist-btn">
+                    <i class="ri-mic-2-line"></i>
+                    <div class="txt">Artist</div>
+                </div>
+                <div class="item album-btn">
+                    <i class="ri-disc-line"></i>
+                    <div class="txt">Album</div>
+                </div>
+                <div class="item developer-btn">
+                    <i class="ri-hand-coin-line"></i>
+                    <div class="txt">Devloper</div>
+                </div>
+                <div class="item bug-btn">
+                    <i class="ri-bug-line"></i>
+                    <div class="txt">Report Bug</div>
+                </div>
+                <div class="item help-btn">
+                    <i class="ri-24-hours-fill"></i>
+                    <div class="txt">Help 24X7</div>
+                </div>
+            </div>
+        </div>
+        <div class="main-container">
+            <div class="app-bar">
+                <div class="input0-box">
+                    <input type="text" placeholder="        Serch here....">
+                </div>
+                <div class="icon0-box">
+                    <i class="ri-notification-2-fill"></i>
+                    <i class="ri-settings-3-fill s-icon"></i>
+                </div>
+            </div>
+            <div class="file-banner">
+                <img src="./project-img/file-management.webp" alt="" srcset="">
+            </div>
+            <div class="options">
+                <div class="item item-1">
+                    <i class="ri-folder-upload-line"></i>
+                    <span class="name">Uploade</span>
+                </div>
+                <div class="item item-2">
+                    <i class="ri-folder-music-line"></i>
+                    <span class="name">Music</span>
+                </div>
+                <div class="item item-3">
+                    <i class="ri-landscape-line"></i>
+                    <span class="name">Image</span>
+                </div>
+                <div class="item item-4">
+                    <i class="ri-bug-line"></i>
+                    <span class="name">Bug Report</span>
+                </div>
+                <div class="item item-5">
+                    <i class="ri-disc-line"></i>
+                    <span class="name">Album</span>
+                </div>
+                <div class="item item-6">
+                    <i class="ri-mic-2-line"></i>
+                    <span class="name">Artist</span>
+                </div>
+                <div class="item item-7">
+                    <i class="ri-live-line"></i>
+                    <span class="name">Video</span>
+                </div>
+                <div class="item item-8">
+                    <i class="ri-wireless-charging-line"></i>
+                    <span class="name">Podcast</span>
+                </div>
+                <div class="item item-9">
+                    <i class="ri-mail-send-fill"></i>
+                    <span class="name">Email</span>
+                </div>
+                <div class="item item-10">
+                    <i class="ri-24-hours-fill"></i>
+                    <span class="name">Help</span>
+                </div>
+                <div class="item item-11">
+                    <i class="ri-refresh-line"></i>
+                    <span class="name">Refresh</span>
+                </div>
+            </div>
+            <!-- ---------------------------------------------------------- -->
+
+            <!-- ---------------------------------------------------------- -->
+            <div class="footer">
+                <div class="f-box">
+                    <div class="logo">
+                        <span class="name">Music-Player || nitesh</span>
+                    </div>
+                    <span class="details">
+                        A skilled music player developer should have expertise in programming languages and audio
+                        technologies, as well as a strong understanding of user experience and interface design. They
+                        should be able to create a seamless, reliable, and user-friendly music player application that
+                        meets the needs and expectations of music lovers.
+                    </span>
+                    <div class="links">
+                        <i class="ri-instagram-line"></i>
+                        <i class="ri-linkedin-fill"></i>
+                        <i class="ri-twitter-line"></i>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"
+    integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+<script src="./js/api-data.js"></script>
+<script src="./js/feature.js"></script>
+<script src="./js/route.js"></script>
+<script>
+    $(document).ready(() => {
+        fetchArtists();
+        fetchSong();
+        basicFeature();
+        InterNet();
+        Route();
+    })
+</script>
+
+</html>
